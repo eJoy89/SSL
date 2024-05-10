@@ -1,6 +1,6 @@
 <template>
     <div>
-      <video ref="videoElement" autoplay></video>
+      <video ref="videoElement" style="transform: scaleX(-1);" autoplay></video>
       <button @click="startCamera">카메라 시작</button>
     </div>
   </template>
