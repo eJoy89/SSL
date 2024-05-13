@@ -28,17 +28,7 @@ import { ref, onMounted } from 'vue';
           console.error("브라우저가 카메라 기능을 지원하지 않습니다.");
         }
 
-        onMounted(() => {
-          const script = document.createElement('script');
-          script.src = "https://code.jquery.com/jquery-3.7.1.min.js";
-          script.integrity = "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=";
-          script.crossOrigin = "anonymous";
-          document.head.appendChild(script);
-
-          script.onload = () => console.log('jQuery loaded successfully');
-          script.onerror = () => console.error('Error loading jQuery');
-        });
-
+       
         // const loadScript = () => {
         //   const skScript = document.createElement("script");
         //   skScript.src = "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js"
@@ -52,6 +42,29 @@ import { ref, onMounted } from 'vue';
         //   loadScript();
         // });
       };
+      onMounted(() => {
+        const script = document.createElement('script');
+        script.src = "https://code.jquery.com/jquery-3.7.1.min.js";
+        script.integrity = "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=";
+        script.crossOrigin = "anonymous";
+        document.head.appendChild(script);
+
+        script.onload = () => console.log('jQuery loaded successfully');
+        script.onerror = () => console.error('Error loading jQuery');
+
+
+        const loadScript = () => {
+          const skScript = document.createElement("script");
+          skScript.src = "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js"
+          // skScript.setAttribute("src", "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js");
+          document.head.appendChild(skScript);  
+          console.log(skScript)
+
+        }
+        loadScript();
+
+      });
+
   
       return {
         videoElement,
