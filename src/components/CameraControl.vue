@@ -27,20 +27,6 @@ import { ref, onMounted } from 'vue';
         } else {
           console.error("브라우저가 카메라 기능을 지원하지 않습니다.");
         }
-
-       
-        // const loadScript = () => {
-        //   const skScript = document.createElement("script");
-        //   skScript.src = "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js"
-        //   // skScript.setAttribute("src", "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js");
-        //   document.head.appendChild(skScript);  
-        //   console.log(skScript)
-
-        // }
-
-        // onMounted(() => {
-        //   loadScript();
-        // });
       };
       onMounted(() => {
         const script = document.createElement('script');
@@ -51,17 +37,6 @@ import { ref, onMounted } from 'vue';
 
         script.onload = () => console.log('jQuery loaded successfully');
         script.onerror = () => console.error('Error loading jQuery');
-
-
-        const loadScript = () => {
-          const skScript = document.createElement("script");
-          skScript.src = "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js"
-          // skScript.setAttribute("src", "https://pay-auth.sk-pay.co.kr/pages/js/v3/lib/crypto/encryptedUserAgent.js");
-          document.head.appendChild(skScript);  
-          console.log(skScript)
-
-        }
-        loadScript();
 
       });
 
